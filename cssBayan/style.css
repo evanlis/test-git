@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1.7vw;
+}
+
+* img {
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3vw;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    color: #f074bc;
+    font-family: 'Righteous';
+}
+
+hr {
+    border: 0.1vw solid #3f95fc;
+}
+
+.container {
+    margin: 2vw 10vw 0 10vw;
+}
+
+.title {
+    padding-bottom: 1vw;
+}
+
+.mem__head:hover {
+    color: #a674f1;
+}
+
+.mem__head {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.mem__input {
+    display: contents;
+}
+
+.mem__name {
+    text-transform: uppercase;
+    display: block;
+    cursor: pointer;
+}
+
+/* настройка картинки и её анимация */
+img {
+    width: 9em;
+    display: flex;
+    animation-name: img-animate;
+    animation-duration: 0.5s;
+}
+
+@keyframes img-animate {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 9em;
+    }
+}
+
+/* Здесь настройка плюсика и его анимация */
+.icon-plus {
+    font-size: 3vw;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.memes:hover .icon-plus {
+    color: #1e1878;
+}
+
+.mem__name:hover .icon-plus {
+    transform: rotate(45deg);
+}
+
+.mem__name:active .icon-plus {
+    transform: rotate(45deg);
+}
+
+/* тут настройка блока с мемом и его появление */
+.mem__img {
+    display: none;
+    padding-bottom: 1vw;
+}
+
+.mem__input:checked~.mem__img {
+    display: block;
+}
+
+.mem__input:checked~.mem__head {
+    color: #a674f1;
+}
+
+.mem__input:checked~.mem__head .icon-plus {
+    transform: rotate(45deg);
+}
+
+/* а тут адаптивность */
+@media (min-width: 821px) {
+    .mem__name:hover .mem__img {
+        display: block;
+    }
+}
+
+@media (max-width: 820px) {
+
+    * {
+        font-size: 4vw;
+    }
+
+    h1 {
+        font-size: 5vw;
+    }
+
+    .icon-plus {
+        font-size: 6vw;
+    }
+}
+
+@media (max-width: 320px) {
+    * {
+        font-size: 4.5vw;
+    }
+
+    h1 {
+        font-size: 6vw;
+    }
+
+
+    .icon-plus {
+        font-size: 8vw;
+    }
+}
